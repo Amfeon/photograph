@@ -1,0 +1,13 @@
+.imageList {
+  display: flex;
+  list-style: none; }
+  .imageList li {
+    position: relative; }
+    .imageList li .checkbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px; }
+
+/*# sourceMappingURL=style.css.map */
