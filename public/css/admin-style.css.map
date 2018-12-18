@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,UAAU;EACR,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,IAAI;EAChB,aAAE;IACA,QAAQ,EAAE,QAAQ;IACnB,uBAAS;MACN,QAAQ,EAAE,QAAQ;MAClB,GAAG,EAAC,CAAC;MACL,KAAK,EAAE,CAAC;MACR,KAAK,EAAE,IAAI;MACX,MAAM,EAAE,IAAI;;AAIlB,KAAK;EACH,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,cAAc;EACtB,aAAa,EAAE,IAAI",
+"sources": ["../../../../../../../../../%D0%AE%D1%81%D0%B8%D0%BA/Desktop/server/server/OpenServer/domains/photograph/public/css/admin-style.scss"],
+"names": [],
+"file": "admin-style.css"
+}

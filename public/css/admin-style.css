@@ -1,0 +1,18 @@
+.imageList {
+  display: flex;
+  list-style: none; }
+  .imageList li {
+    position: relative; }
+    .imageList li .checkbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 30px; }
+
+.item {
+  min-height: 300px;
+  border: 1px solid #000;
+  border-radius: 20px; }
+
+/*# sourceMappingURL=admin-style.css.map */
