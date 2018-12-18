@@ -13,9 +13,9 @@ class ImagesController extends Controller
 {
     //
     public function index(Request $request){
-        $path = $request->file('image')->store('image');
+        $path = $request->file('image')->store('slider');
         $image = Image::make('storage/'.$path)->resize(1200,800);
-        $image->save('storage\image\medium_'.$image->basename);
+        $image->save('storage\slider\\'.$image->basename);
         return redirect('/');
      /*   $temp_name= $request->file('image')->getClientOriginalName();
         $request->file('image')->move('image/',$temp_name);*/
@@ -30,7 +30,7 @@ class ImagesController extends Controller
     }
 
     public function getImage(){
-       $files = Storage::files('image');
-        return view('back-end.show-image',['data'=>$files]);
+       $files = Storage::files('slider');
+        return view('front-end.home',['data'=>$files]);
     }
 }

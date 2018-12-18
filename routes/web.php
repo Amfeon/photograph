@@ -14,15 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/',function (){
-    return view('welcome');
-});
+Route::get('/','ImagesController@getImage');
 Route::get('/admin',function (){
     return view('back-end.admin');
 });
 Route::get('/slider', 'ImagesController@getImage');
 Route::POST('/store','ImagesController@index');
 Route::GET('/show-slider','ImagesController@getImage');
+Route::GET('/add-slider',function (){
+    return view('back-end.putImage');
+});
 Route::POST('/show-slider/delete','ImagesController@delete');
 
     

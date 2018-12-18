@@ -1,14 +1,241 @@
-.imageList{
+@import "scss/bootstrap-grid";
+$color-gr:#000;
+$color-background:#222;
+$color-light: #eee;
+$color-red: #ff3856;
+h1,h2,h3{
+  font-size:60px;
+}
+body,html{
+  margin: 0;
+  padding: 0;
+  color: $color-light;
+  font-size: 18px;
   display: flex;
-  list-style: none;
-  li{
-    position: relative;
-   .checkbox{
-      position: absolute;
-      top:0;
-      right: 0;
-      width: 30px;
-      height: 30px;
+  flex-direction: column;
+}
+.botton{
+  text-decoration: none;
+  margin: 20px auto;
+  padding: 15px 30px;
+  border: 1px solid $color-light;
+  color: $color-light;
+  width: 30%;
+  border-radius: 10px;
+  transition: background .4s;
+  &:hover{
+    cursor: pointer;
+    background: $color-red;
+    border: 1px solid $color-red;
+  }
+}
+.header{
+  background: #000;
+  &__logo{
+    margin: 20px 0;
+  }
+  &__menu{
+    display: flex;
+    ul{
+      margin: 0;
+      list-style: none;
+      justify-content: flex-end;
     }
+    li{
+      display: flex;
+    }
+    a{
+     text-decoration: none;
+      color: $color-light;
+      align-items: center;
+      display: flex;
+      padding: 0 15px;
+      &:hover{
+        background: $color-red;
+
+      }
+    }
+  }
+}
+.slider{
+  position: relative;
+  justify-content: space-between;
+  .inner_slider{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    .item{
+      display:block;
+      width: 100%;
+    }
+
+    img{
+      object-fit:cover;
+      height: 600px;
+      width: 100%;
+      object-position: left 20%;
+    }
+  }
+ .next{
+    position: absolute;
+    Width: 15%;
+    height:100%;
+    top:0;
+    right: 0;
+   background: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+   opacity: .5;
+   transition: all 0.5s linear;
+    &:hover{
+      opacity: 1;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+  }
+  .prev{
+    position: absolute;
+    Width: 15%;
+    height:100%;
+    top:0;
+    left: 0;
+    background: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+    opacity: .5;
+    transition: all 0.5s linear;
+    &:hover{
+      opacity: 1;
+      cursor: pointer;
+      transition: all 0.3s linear;
+    }
+  }
+  .left{
+    position: absolute;
+    width:77px;
+    height:77px;
+    background-image: url(img/left.png);
+    top:50%;
+    left: 15%;
+    z-index: 999;
+  }
+  .right{
+      position: absolute;
+      top:50%;
+      right:15%;
+        width:77px;
+        height:77px;
+        background-image: url(img/right.png);
+      z-index: 999;
+  }
+}
+.photo-circle{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top:25% ;
+  left: calc(50% - 100px);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+  i{
+    font-size:36px;
+  }
+}
+.contact{
+  background-color: $color-gr;
+  color: $color-light;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &__title{
+    font-size:60px;
+    margin-top: 50px;
+  }
+  &__botton{
+    margin: 50px auto;
+  }
+}
+
+.portfolio{
+  margin: 0 15px;
+  color: $color-background;
+  &__title{
+    text-align: center;
+  }
+  &__item{
+    width:400px;
+    margin-top: 50px;
+  }
+  &__image{
+    box-shadow: 0 0 20px #000;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+}
+.footer{
+  background: #000;
+  margin-top:100px;
+  text-align: center;
+  .social{
+    margin: 50px auto;
+    ul{
+      display: flex;
+      list-style: none;
+    }
+    .social__item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:100px;
+      height: 100px;
+      //background: $color-red;
+      border-radius: 50%;
+      border: 1px solid $color-red;
+      position: relative;
+      margin: 5px;
+      transition: background .4s;
+      i{
+        font-size:36px;
+        color: $color-light;
+      }
+      &:hover{
+        cursor: pointer;
+        background: $color-red;
+        transition: background .8s;
+      }
+    }
+  }
+}
+.portfolio__slider{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0, .8);
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  .portfolio__slider__image{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  img{
+    width: 90%;
+    height: 90%;
+  }
+  .portfolio__slider__next,.portfolio__slider__prev{
+    position: absolute;
+    right:0;
+    top:50%;
+    width:100px;
+    cursor:pointer;
+  }
+  .portfolio__slider__prev{
+    left:0;
   }
 }

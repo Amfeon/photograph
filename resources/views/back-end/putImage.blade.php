@@ -7,11 +7,3 @@
     {!! Form::close() !!}
 @stop
 
-
-{!! Form::open(['action'=>'ImagesController@delete']) !!}
-@foreach($data as $image)
-    <input class="checkbox" type="checkbox" name="{{$image}}" value="{{$image}}"><img src="storage\{{ $image }}" width="500" height="500">
-
-@endforeach
-{!! Form::submit('отправить') !!}
-{!! Form::close() !!}
