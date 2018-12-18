@@ -21,6 +21,7 @@ Route::get('/admin',function (){
 Route::get('/slider', 'ImagesController@getImage');
 Route::POST('/store','ImagesController@index');
 Route::GET('/show-slider','ImagesController@getImage');
+Route::GET('/edit-slider','ImagesController@edit_slider');
 Route::GET('/add-slider',function (){
     return view('back-end.putImage');
 });

@@ -13,10 +13,19 @@ class ImagesController extends Controller
 {
     //
     public function index(Request $request){
+
+            $data=$request->file('image');
+        foreach ($data as $item){
+            $path = $item->store('slider');
+            $image = Image::make('storage/'.$path)->resize(1200,800);
+            $image->save('storage\slider\\'.$image->basename);
+        }
+
+     /*
         $path = $request->file('image')->store('slider');
         $image = Image::make('storage/'.$path)->resize(1200,800);
         $image->save('storage\slider\\'.$image->basename);
-        return redirect('/');
+        return redirect('/');*/
      /*   $temp_name= $request->file('image')->getClientOriginalName();
         $request->file('image')->move('image/',$temp_name);*/
 
@@ -32,5 +41,9 @@ class ImagesController extends Controller
     public function getImage(){
        $files = Storage::files('slider');
         return view('front-end.home',['data'=>$files]);
+    }
+    public function edit_slider(){
+        $files = Storage::files('slider');
+        return view('back-end.show-image',['data'=>$files]);
     }
 }

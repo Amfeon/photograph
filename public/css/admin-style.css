@@ -11,8 +11,20 @@
       height: 30px; }
 
 .item {
+  display: flex;
+  flex-direction: column;
   min-height: 300px;
   border: 1px solid #000;
-  border-radius: 20px; }
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center; }
+
+.bottoms_block {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer; }
+  .bottoms_block input {
+    margin: 20px 0; }
 
 /*# sourceMappingURL=admin-style.css.map */
