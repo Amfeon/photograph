@@ -1,14 +1,27 @@
+.main {
+  margin-top: 50px; }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+
 .imageList {
   display: flex;
-  list-style: none; }
+  list-style: none;
+  padding-left: 0;
+  flex-wrap: wrap; }
   .imageList li {
-    position: relative; }
+    position: relative;
+    width: 50%; }
     .imageList li .checkbox {
       position: absolute;
       top: 0;
       right: 0;
       width: 30px;
       height: 30px; }
+    .imageList li img {
+      width: 100%;
+      height: auto; }
 
 .item {
   display: flex;
@@ -26,5 +39,8 @@
   cursor: pointer; }
   .bottoms_block input {
     margin: 20px 0; }
+
+.awesome {
+  align-self: center; }
 
 /*# sourceMappingURL=admin-style.css.map */

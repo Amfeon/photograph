@@ -1,14 +1,29 @@
+.main{
+  margin-top: 50px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+
+}
 .imageList{
   display: flex;
   list-style: none;
+  padding-left: 0;
+flex-wrap: wrap;
   li{
     position: relative;
+    width: 50%;
    .checkbox{
       position: absolute;
       top:0;
       right: 0;
       width: 30px;
       height: 30px;
+    }
+    img{
+      width: 100%;
+      height: auto;
     }
   }
 }
@@ -29,4 +44,7 @@
 input{
   margin: 20px 0;
 }
+}
+.awesome{
+ align-self: center;
 }
