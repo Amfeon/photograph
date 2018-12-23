@@ -25,6 +25,8 @@ Route::GET('/edit-slider','ImagesController@edit_slider');
 Route::GET('/add-slider',function (){
     return view('back-end.putImage');
 });
+Route::GET('/show-galleries','GalleryController@editGallery');
+Route::POST('/create-gallery','GalleryController@create');
 Route::POST('/show-slider/delete','ImagesController@delete');
 
     

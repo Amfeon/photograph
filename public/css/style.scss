@@ -166,6 +166,19 @@ body,html{
   &__item{
     width:400px;
     margin-top: 50px;
+    position: relative;
+    h4{
+      position: absolute;
+      bottom: 0;
+      background-color: #000;
+      opacity: .8;
+      color: white;
+      padding: 10px;
+      font-size:20px;
+      margin: 0;
+      width: 100%;
+      text-align: center;
+    }
   }
   &__image{
     box-shadow: 0 0 20px #000;

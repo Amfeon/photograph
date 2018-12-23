@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 // include composer autoload
 use Intervention\Image\Facades\Image;
-
+use  App\gallery;
 
 
 
@@ -40,7 +40,8 @@ class ImagesController extends Controller
 
     public function getImage(){
        $files = Storage::files('slider');
-        return view('front-end.home',['data'=>$files]);
+       $gallery=gallery::all();
+        return view('front-end.home',['data'=>$files,'galleries'=>$gallery]);
     }
     public function edit_slider(){
         $files = Storage::files('slider');

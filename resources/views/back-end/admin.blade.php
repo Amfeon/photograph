@@ -8,7 +8,10 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="item"></div>
+            <div class="item text-center">
+                <h3 class="item__title ">Фотосессии</h3>
+                <a href="/show-galleries" class="btn btn-success">изменить фотосессии</a>
+            </div>
         </div>
         <div class="col-lg-4">
             <div class="item"></div>

@@ -26,7 +26,7 @@
                 <a class="nav-link" href="/edit-slider">Слайдер</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Фотосессии</a>
+                <a class="nav-link disabled" href="/show-galleries">Фотосессии</a>
             </li>
         </ul>
     </div>

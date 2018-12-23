@@ -34,12 +34,12 @@
     <div class="container-fluid">
         <h2 class="portfolio__title ">Мои работы</h2>
         <div class="row flex-wrap justify-content-between" >
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/1.jpg"></div>
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/11.jpg"></div>
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/12.jpg"></div>
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/9.jpg"></div>
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/5.jpg"></div>
-            <div class="portfolio__item"><img class="portfolio__image" src="image/slider/8.jpg"></div>
+            @foreach($galleries as $gallery)
+            <div class="portfolio__item">
+                <img class="portfolio__image" src="storage\{{$gallery->thumnail}}">
+                <h4>{{$gallery->title}}</h4>
+            </div>
+                @endforeach
         </div>
     </div>
 </section>
