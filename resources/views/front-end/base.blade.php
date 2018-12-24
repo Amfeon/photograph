@@ -37,7 +37,17 @@
 @yield('content')
 <footer class="footer">
     <div class="container">
-        <div class="row">
+        <h3>Контакты</h3>
+        <div class="row flex-wrap">
+            <div class="form">
+                {!! Form::open(['action'=>'Mail@store', 'files'=>'true', 'class'=>'bottoms_block']) !!}
+                {!! Form::label('Ваше имя (Обязательно)') !!}
+                {!! Form::text('name') !!}
+                {!! Form::label('Телефон (Обязательно)') !!}
+                {!! Form::text('зрщту') !!}
+                {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
+                {!! Form::close() !!}
+            </div>
             <div class="social">
                 <ul>
                     <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>

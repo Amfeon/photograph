@@ -29,6 +29,7 @@ Route::GET('/show-galleries','GalleryController@editGallery');
 Route::POST('/create-gallery','GalleryController@create');
 Route::POST('/show-slider/delete','ImagesController@delete');
 Route::GET('/delete-gallery/{id}', 'GalleryController@delete');
+Route::POST('/contact', 'Mail@store')->name('contact');
 
     
 
