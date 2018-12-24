@@ -20,4 +20,12 @@ class photoImage extends Model
             $this->save();
         }
     }
+    public  function deleteImg($id){
+        $images=$this->where('gallery_id',$id)->get();
+        foreach ($images as $image){
+            Storage::delete($image->sourse);
+            $this->destroy($image->id);
+        }
+
+    }
 }

@@ -25,4 +25,8 @@ class gallery extends Model
         $this->save();
         return $this->id;
     }
+    public function deleteGallery($id)
+    {
+        $this->destroy($id);
+    }
 }

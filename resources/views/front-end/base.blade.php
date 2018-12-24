@@ -12,7 +12,43 @@
 
 </head>
 <body>
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="header__logo"><a href="/">Загляни к <span class="red">Дашанчику</span></a></div>
+            </div>
+            <div class="col-8 d-flex justify-content-end">
+                <nav class="header__menu">
+
+                    <!--  <ul class="d-flex ">
+                           <li><a href="#">Home</a></li>
+                           <li><a href="#">About</a></li>
+                           <li><a href="#">Projects</a></li>
+                           <li><a href="#">Blog</a></li>
+                           <li><a href="#">Social</a></li>
+                       </ul> -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
 @yield('content')
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="social">
+                <ul>
+                    <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>
+                    <li class="social__item"><a href="#"> <i class="demo-icon icon-youtube"></i></a></li>
+                    <li class="social__item"><a href="#"> <i class="demo-icon icon-instagram"></i></a></li>
+                </ul>
+                <div class="copyright">© Все все права защищены </div>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
     $(document).ready(function(){
         var slider= $('.inner_slider').slick({

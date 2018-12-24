@@ -13,14 +13,23 @@ class GalleryController extends Controller
         $gallery=$request->file('gallery');
         $title=$request->input('title');
         $gal=new gallery();
-//        $gal_id=$gal->createGallery($gallery,$title);
-        $gal_id=1;
+        $gal_id=$gal->createGallery($gallery,$title);
         $img= new photoImage();
         $img->addImages($images,$gal_id);
+        return redirect('\show-galleries');
+
     }
     public  function editGallery(){
         $gal = new gallery();
         $gallery=$gal->all();
         return view('back-end.show-galleries',["data"=>$gallery]);
+    }
+    public  function delete(Request $request){
+        $id=$request->id;
+        $img= new photoImage();
+        $img->deleteImg($id);
+        $gal = new gallery();
+        $gal->deleteGallery($id);
+        return redirect('/show-galleries');
     }
 }

@@ -3,7 +3,7 @@
     <div class="row flex-column">
             <h3 class="alert alert-info">Создание новой галлереи </h3>
         {!! Form::open(['action'=>'GalleryController@create', 'files'=>'true', 'class'=>'bottoms_block']) !!}
-        {!! Form::label('Название') !!}
+        {!! Form::label('Название фотосессии') !!}
         {!! Form::text('title') !!}
         {!! Form::label('Миниатюра ') !!}
         {!! Form::file('gallery',['class' => 'awesome', 'accept'=>'image/jpeg']) !!}
@@ -13,8 +13,8 @@
         {!! Form::close() !!}
     </div>
     <div class="row flex-wrap">
+        @foreach($data as $item)
         <div class="card">
-            @foreach($data as $item)
             <div class="card-body text-center"><!-- Начало текстового контента -->
                 <h4 class="card-title">{{$item->title}}</h4>
                 <img src="storage\{{$item->thumnail}}" class="card-img" >

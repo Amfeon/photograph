@@ -33,6 +33,12 @@ body,html{
   background: #000;
   &__logo{
     margin: 20px 0;
+    a{
+      text-decoration: none;
+      font-size:26px;
+      font-weight:bold;
+      color: white;
+    }
   }
   &__menu{
     display: flex;
@@ -251,4 +257,7 @@ body,html{
   .portfolio__slider__prev{
     left:0;
   }
+}
+.red{
+  color: $color-red;
 }

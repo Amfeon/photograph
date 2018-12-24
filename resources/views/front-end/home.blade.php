@@ -33,7 +33,7 @@
 <section class="portfolio">
     <div class="container-fluid">
         <h2 class="portfolio__title ">Мои работы</h2>
-        <div class="row flex-wrap justify-content-between" >
+        <div class="row flex-wrap justify-content-around" >
             @foreach($galleries as $gallery)
             <div class="portfolio__item">
                 <img class="portfolio__image" src="storage\{{$gallery->thumnail}}">

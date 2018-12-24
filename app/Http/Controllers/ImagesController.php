@@ -20,15 +20,6 @@ class ImagesController extends Controller
             $image = Image::make('storage/'.$path)->resize(1200,800);
             $image->save('storage\slider\\'.$image->basename);
         }
-
-     /*
-        $path = $request->file('image')->store('slider');
-        $image = Image::make('storage/'.$path)->resize(1200,800);
-        $image->save('storage\slider\\'.$image->basename);
-        return redirect('/');*/
-     /*   $temp_name= $request->file('image')->getClientOriginalName();
-        $request->file('image')->move('image/',$temp_name);*/
-
     }
     public function delete(Request $request){
             $name=$request->except('_token');
