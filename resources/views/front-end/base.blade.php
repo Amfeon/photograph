@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="description" content="Кошерные фоточки">
+
+    <title>Качественные фотосесси от Дашанчика</title>
+
     <link rel="stylesheet" href="css\style.css">
     <link rel="stylesheet" href="css\fontello.css">
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -39,22 +42,25 @@
     <div class="container">
         <h3>Контакты</h3>
         <div class="row flex-wrap">
-            <div class="form">
-                {!! Form::open(['action'=>'Mail@store', 'files'=>'true', 'class'=>'bottoms_block']) !!}
-                {!! Form::label('Ваше имя (Обязательно)') !!}
-                {!! Form::text('name') !!}
-                {!! Form::label('Телефон (Обязательно)') !!}
-                {!! Form::text('зрщту') !!}
-                {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
-                {!! Form::close() !!}
-            </div>
-            <div class="social">
-                <ul>
-                    <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>
-                    <li class="social__item"><a href="#"> <i class="demo-icon icon-youtube"></i></a></li>
-                    <li class="social__item"><a href="#"> <i class="demo-icon icon-instagram"></i></a></li>
-                </ul>
-                <div class="copyright">© Все все права защищены </div>
+            <div class="col-lg-6">
+                <div class="form">
+                    {!! Form::open(['action'=>'Mail@store', 'files'=>'true', 'class'=>'bottoms_block']) !!}
+                    {!! Form::label('name','Ваше имя (Обязательно)') !!}
+                    {!! Form::text('name') !!}
+                    {!! Form::label('phone','Телефон (Обязательно)') !!}
+                    {!! Form::text('phone') !!}
+                    {!! Form::submit('Отправить заявку', ['class'=>'botton']) !!}
+                    {!! Form::close() !!}
+                </div></div>
+            <div class="col-lg-6">
+                <div class="social">
+                    <ul>
+                        <li class="social__item"><a href="#"> <i class="demo-icon icon-vkontakte"></i></a></li>
+                        <li class="social__item"><a href="#"> <i class="demo-icon icon-youtube"></i></a></li>
+                        <li class="social__item"><a href="#"> <i class="demo-icon icon-instagram"></i></a></li>
+                    </ul>
+                    <div class="copyright">© Все все права защищены </div>
+                </div>
             </div>
         </div>
     </div>

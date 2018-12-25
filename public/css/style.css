@@ -1599,7 +1599,9 @@ body, html {
   margin-top: 100px;
   text-align: center; }
   .footer .social {
-    margin: 50px auto; }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
     .footer .social ul {
       display: flex;
       list-style: none; }
@@ -1651,5 +1653,23 @@ body, html {
 
 .red {
   color: #ff3856; }
+
+.bottoms_block {
+  display: flex;
+  flex-direction: column; }
+  .bottoms_block input {
+    padding: 10px 15px;
+    margin: 15px 0; }
+  .bottoms_block .botton {
+    align-self: center;
+    padding: 15px 10px;
+    background: #000;
+    transition: background 0.8s; }
+    .bottoms_block .botton:hover {
+      background: #ff3856;
+      transition: background 0.8s; }
+
+.form {
+  margin-top: 18px; }
 
 /*# sourceMappingURL=style.css.map */

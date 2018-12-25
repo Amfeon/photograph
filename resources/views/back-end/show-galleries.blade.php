@@ -1,18 +1,35 @@
 @extends('back-end.admin-base')
 @section('content')
     <div class="row flex-column">
-            <h3 class="alert alert-info">Создание новой галлереи </h3>
+            <h3 class="alert alert-info">Создание новой фотосессии </h3>
         {!! Form::open(['action'=>'GalleryController@create', 'files'=>'true', 'class'=>'bottoms_block']) !!}
-        {!! Form::label('Название фотосессии') !!}
-        {!! Form::text('title') !!}
-        {!! Form::label('Миниатюра ') !!}
-        {!! Form::file('gallery',['class' => 'awesome', 'accept'=>'image/jpeg']) !!}
-        {!! Form::label('Картинки фотосессии ') !!}
-        {!! Form::file('image[]',['class' => 'awesome', 'accept'=>'image/jpeg', 'multiple'=>'true']) !!}
-        {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
+        <div class="form-group">
+            {!! Form::text('title','',['class'=>'form-control form-control-lg','placeholder'=> 'Название фотосессии']) !!}
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Миниатюра</span>
+            </div>
+            <div class="custom-file">
+                {!! Form::label('gallery','Выбери миниатюру', ['class'=>'custom-file-label','id'=>'thumnail_label']) !!}
+                {!! Form::file('gallery',['class' => 'custom-file-input','id'=>'thumnail', 'accept'=>'image/jpeg']) !!}
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Фоточки</span>
+            </div>
+            <div class="custom-file">
+                {!! Form::label('image','Выбери картинки фотосессии', ['class'=>'custom-file-label' , 'id'=>'label_images']) !!}
+                {!! Form::file('image[]',['class' => 'custom-file-input','id'=>'images', 'accept'=>'image/jpeg', 'multiple'=>'true']) !!}
+            </div>
+        </div>
+            {!! Form::label('text','Осисание фотосесии') !!}
+            {!! Form::textarea('text') !!}
+        {!! Form::button('создать', ['class'=>'btn btn-info']) !!}
         {!! Form::close() !!}
     </div>
-    <div class="row flex-wrap">
+    <div class="row flex-wrap" style="margin-top: 30px">
         @foreach($data as $item)
         <div class="card">
             <div class="card-body text-center"><!-- Начало текстового контента -->

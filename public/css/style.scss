@@ -198,7 +198,9 @@ body,html{
   margin-top:100px;
   text-align: center;
   .social{
-    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     ul{
       display: flex;
       list-style: none;
@@ -260,4 +262,25 @@ body,html{
 }
 .red{
   color: $color-red;
+}
+.bottoms_block{
+  display: flex;
+  flex-direction: column;
+  input{
+    padding: 10px 15px;
+    margin: 15px 0;
+  }
+  .botton{
+    align-self: center;
+    padding: 15px 10px;
+    background: #000;
+    transition: background 0.8s;
+    &:hover{
+      background: $color-red;
+      transition: background 0.8s;
+    }
+  }
+}
+.form{
+  margin-top: 18px;
 }

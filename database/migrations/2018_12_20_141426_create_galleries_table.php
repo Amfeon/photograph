@@ -17,6 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->increments('id');
             $table->char('title',255);
             $table->char('thumnail',255);
+            $table->text('text');
         });
     }
 
