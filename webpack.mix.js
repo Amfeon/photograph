@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+var mix = require('laravel-mix'); //change on let
 
 /*
  |--------------------------------------------------------------------------
@@ -12,4 +12,8 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+   .sass('resources/assets/sass/admin-style.scss', 'public/css')
+   .sass('resources/assets/sass/style.scss', 'public/css')
+   .options({
+    processCssUrls: false
+});

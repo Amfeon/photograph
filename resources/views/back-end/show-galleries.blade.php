@@ -26,7 +26,7 @@
         </div>
             {!! Form::label('text','Осисание фотосесии') !!}
             {!! Form::textarea('text') !!}
-        {!! Form::button('создать', ['class'=>'btn btn-info']) !!}
+        {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
         {!! Form::close() !!}
     </div>
     <div class="row flex-wrap" style="margin-top: 30px">

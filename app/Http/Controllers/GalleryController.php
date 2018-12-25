@@ -12,14 +12,15 @@ class GalleryController extends Controller
         $images=$request->file('image');
         $gallery=$request->file('gallery');
         $title=$request->input('title');
+        $text=$request->input('text');
         $gal=new gallery();
-        $gal_id=$gal->createGallery($gallery,$title);
+        $gal_id=$gal->createGallery($gallery,$title, $text);
         $img= new photoImage();
         $img->addImages($images,$gal_id);
         return redirect('\show-galleries');
 
     }
-    public  function editGallery(){
+    public  function showGallery(){
         $gal = new gallery();
         $gallery=$gal->all();
         return view('back-end.show-galleries',["data"=>$gallery]);

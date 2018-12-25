@@ -11,7 +11,7 @@ class gallery extends Model
 {
     protected $table = 'galleries';
     public $timestamps = false;
-    public function createGallery($request,$title){
+    public function createGallery($request,$title, $text){
 
       //  foreach ($request as $item){
             $name= $request->getClientOriginalName();
@@ -22,6 +22,7 @@ class gallery extends Model
        // }
         $this->title=$title;
         $this->thumnail=$path;
+        $this->text=$text;
         $this->save();
         return $this->id;
     }
