@@ -8,6 +8,6 @@ class MailController extends Controller
 {
     public function store(Request $request)
     {
-     
+     return "Все хорошо";
     }
 }

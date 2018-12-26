@@ -7,10 +7,10 @@
         @endforeach
     </div>
     <div class="prev">
-        <a class="left" href="#" role="button" data-slide="prev">  </a>
+        <span class="left" role="button" data-slide="prev">  </span>
     </div>
     <div class="next">
-        <a class="right" href="#" role="button" data-slide="next">  </a>
+        <span class="right" role="button" data-slide="next">  </span>
     </div>
     <div class="photo-circle">
         <i class="demo-icon icon-camera"></i>
@@ -30,6 +30,7 @@
         </div>
     </div>
 </section>
+
 <section class="portfolio">
     <div class="container-fluid">
         <h2 class="portfolio__title ">Мои работы</h2>
