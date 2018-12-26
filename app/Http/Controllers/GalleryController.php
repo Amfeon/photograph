@@ -33,4 +33,10 @@ class GalleryController extends Controller
         $gal->deleteGallery($id);
         return redirect('/show-galleries');
     }
+    public function editGallery(Request $request){
+        $a=new gallery();
+        $data=$a->getGallery($request->id);
+        return view('back-end.edit-gallery');
+
+    }
 }

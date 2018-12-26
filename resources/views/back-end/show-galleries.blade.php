@@ -29,6 +29,7 @@
         {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
         {!! Form::close() !!}
     </div>
+    <h3 class="alert alert-warning">Текуцие фотосессии</h3>
     <div class="row flex-wrap" style="margin-top: 30px">
         @foreach($data as $item)
         <div class="card">
@@ -36,7 +37,7 @@
                 <h4 class="card-title">{{$item->title}}</h4>
                 <img src="storage\{{$item->thumnail}}" class="card-img" >
                 <div class="d-flex justify-content-between" style="margin: 20px 0">
-                    <a class="btn btn-warning" href="#" class="card-link">Редактировать</a>
+                    <a class="btn btn-warning" href="/edit-gallery/{{$item->id}}" class="card-link">Редактировать</a>
                     <a  class="btn btn-danger" href="/delete-gallery/{{$item->id}}" class="card-link">Удалить</a>
                 </div>
 

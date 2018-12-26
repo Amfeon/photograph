@@ -30,4 +30,8 @@ class gallery extends Model
     {
         $this->destroy($id);
     }
+    public function getGallery($id){
+        return $this->find($id);
+        
+    }
 }
