@@ -27,9 +27,12 @@ Route::GET('/add-slider',function (){
 });
 Route::GET('/show-galleries','GalleryController@showGallery');
 Route::GET('/edit-gallery/{id}','GalleryController@editGallery');
+Route::POST('/edit-gallery/','GalleryController@storeUpdate');
+
 Route::POST('/create-gallery','GalleryController@create');
 Route::POST('/show-slider/delete','ImagesController@delete');
 Route::GET('/delete-gallery/{id}', 'GalleryController@delete');
+Route::POSt('/ajax-load-image', 'GalleryController@ajaxLoad');
 Route::POST('/contact', 'MailController@store')->name('contact');
 
 

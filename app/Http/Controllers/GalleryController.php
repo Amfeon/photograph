@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use  App\gallery;
 use  App\photoImage;
@@ -36,7 +36,18 @@ class GalleryController extends Controller
     public function editGallery(Request $request){
         $a=new gallery();
         $data=$a->getGallery($request->id);
-        return view('back-end.edit-gallery');
-
+        return view('back-end.edit-gallery',['data'=>$data]);
+    }
+    public function storeUpdate(Request $request){
+        $gallery= new gallery();
+        $gallery->updateGallery($request);
+        return redirect('/show-galleries');
+    }
+    public function ajaxLoad(Request $request){
+        $file=$request->file();
+        $file=$file[0];
+        $gallery=new gallery();
+        $path=$gallery-> addAjaxThumnail($file);
+        return $path;
     }
 }
