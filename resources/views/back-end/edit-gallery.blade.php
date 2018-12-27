@@ -9,13 +9,14 @@
             {!! Form::label('text','Осисание фотосесии') !!}
             {!! Form::textarea('text', $data['text']) !!}
             {!! Form::hidden('id', $data['id']) !!}
+            {!! Form::hidden('thumnail', $data['thumnail'], ['id'=>'thumnail']) !!}
             {!! Form::submit('обновить', ['class'=>'btn btn-success']) !!}
 
         <div class="row flex-column">
             <h4 >Миниатюка фотосессии</h4>
             <div class="row">
                 <div class="col-lg-3">
-                    <img src="/storage/{{$data['thumnail']}}" width="200" height="150">
+                    <img id="thumnailImage" src="/storage/{{$data['thumnail']}}" width="200" height="150">
                 </div>
             </div>
             </div>

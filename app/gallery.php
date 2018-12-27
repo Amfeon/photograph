@@ -35,6 +35,7 @@ class gallery extends Model
        $temp= $this->getGallery($request->id);
        $temp->title=$request->title;
        $temp->text=$request->text;
+       $temp->thumnail=$request->thumnail;
        $temp->save();
     }
     public function addAjaxThumnail($request){

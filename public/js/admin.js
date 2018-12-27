@@ -38,12 +38,14 @@ $(document).ready(function () {
             },
             success     : function(data){
                 // ОК - файлы загружены
-           alert(data);
-            }
+                newpath='/storage/' + data['path'];
+                $('#thumnailImage').attr('src',newpath);
+                $('#thumnail').val(data['path']);
+            },
             // функция ошибки ответа сервера
-          /*  error: function( jqXHR, status, errorThrown ){
+            error: function( jqXHR, status, errorThrown ){
                 console.log( 'ОШИБКА AJAX запроса: ' + status, jqXHR );
-            }*/
+            }
         });
 
     })

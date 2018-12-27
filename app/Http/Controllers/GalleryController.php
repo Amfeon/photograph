@@ -48,6 +48,9 @@ class GalleryController extends Controller
         $file=$file[0];
         $gallery=new gallery();
         $path=$gallery-> addAjaxThumnail($file);
-        return $path;
+        return response()->json([
+            'path'=>$path
+        ]);
+
     }
 }
