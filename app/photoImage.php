@@ -13,7 +13,7 @@ class photoImage extends Model
     public function addImages($data,$id){
         foreach ($data as $image){
             $path = $image->store('photo');
-            $img = Image::make('storage/'.$path)->resize(1280,720);
+            $img = Image::make('storage/'.$path)->resize(1280,854);
             $img->save('storage\photo\\'.$img->basename);
             $this->sourse=$path;
             $this->gallery_id=$id;
@@ -26,6 +26,8 @@ class photoImage extends Model
             Storage::delete($image->sourse);
             $this->destroy($image->id);
         }
-
+    }
+    public function getImages($id){
+        return $this->where('gallery_id',$id)->get();
     }
 }

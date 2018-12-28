@@ -6,10 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Качественные фотосесси от Дашанчика</title>
 
-    <link rel="stylesheet" href="css\style.css">
-    <link rel="stylesheet" href="css\fontello.css">
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fontello.css">
+    <link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 
 
 
@@ -65,9 +65,12 @@
         </div>
     </div>
 </footer>
-
+<div class="portfolio__slider">
+    <div class="portfolio__slider__image"></div>
+    <div class="portfolio__slider__next"><img src="/css/img/right.png"></div>
+    <div class="portfolio__slider__prev"><img src="/css/img/left.png"></div>
+</div>
 <script rel="script" src="{!! asset('js/app.js')!!} "></script>
-<script src="slick/slick.min.js"></script>
-
+<script src="/slick/slick.min.js"></script>
 </body>
 </html>

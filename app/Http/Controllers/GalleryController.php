@@ -51,6 +51,12 @@ class GalleryController extends Controller
         return response()->json([
             'path'=>$path
         ]);
-
     }
+    public function photoSession ($id){
+        $gal = new gallery();
+        $gallery=$gal->find($id);
+        $img=new photoImage();
+        $images= $img->getImages($id);
+        return view('front-end.photoSession',['gallery'=>$gallery, 'images'=>$images]);
+}
 }

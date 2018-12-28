@@ -34,11 +34,12 @@ $(document).ready(function(){
 
 
     //Слайдер портфолио
-   /* var a=$('.portfolio img');
+    var a=$('.photo-session_images img');
     var count=a.length;
     var current=0;
 
-    $('.portfolio img').click(function(e){
+    $('.photo-session_images img').click(function(e){
+        $("body").css("overflow-y","hidden");
         $('.portfolio__slider').css('display', 'flex');
         $('<img>',{src: this.src}).appendTo('.portfolio__slider__image');
         var scroll= $('html').scrollTop();
@@ -67,8 +68,9 @@ $(document).ready(function(){
         $('.portfolio__slider__image img').attr({src: a[current].src});
     });
     $('.portfolio__slider__image').click(function(){
+        $("body").css("overflow-y","visible");
         $('.portfolio__slider').hide();
         $('.portfolio__slider__image img').remove();
     });
-*/
+
 });

@@ -37,8 +37,9 @@
         <div class="row flex-wrap justify-content-around" >
             @foreach($galleries as $gallery)
             <div class="portfolio__item">
-                <img class="portfolio__image" src="storage\{{$gallery->thumnail}}">
+                <a href="photo-session/{{$gallery['id']}}" title="{{$gallery['title']}}" ><img class="portfolio__image" src="storage\{{$gallery->thumnail}}">
                 <h4>{{$gallery->title}}</h4>
+                </a>
             </div>
                 @endforeach
         </div>

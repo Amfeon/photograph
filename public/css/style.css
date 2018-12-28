@@ -2574,3 +2574,11 @@ body, html {
 .form {
   margin-top: 18px;
 }
+
+.photo-session {
+  color: black;
+}
+
+.photo-session_title {
+  text-align: center;
+}
