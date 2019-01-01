@@ -14,33 +14,27 @@
 Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/','ImagesController@getImage');
-Route::get('/admin',function (){
-    return view('back-end.admin');
+Auth::routes();
+Route::group(['middleware'=> 'auth'],function(){
+    Route::get('/admin',function (){
+        return view('back-end.admin');
+    });
+    Route::POST('/store','ImagesController@index');
+    Route::GET('/show-slider','ImagesController@getImage');
+    Route::GET('/edit-slider','ImagesController@edit_slider');
+    Route::GET('/add-slider',function (){
+        return view('back-end.putImage');
+    });
+    Route::GET('/edit-gallery/{id}','GalleryController@editGallery');
+    Route::POST('/edit-gallery/','GalleryController@storeUpdate');
+    Route::POST('/create-gallery','GalleryController@create');
+    Route::POST('/show-slider/delete','ImagesController@delete');
+    Route::GET('/delete-gallery/{id}', 'GalleryController@delete');
+    Route::POST('/ajax-load-image', 'GalleryController@ajaxLoad');
+    Route::get('/slider', 'ImagesController@getImage');
+    Route::GET('/show-galleries','GalleryController@showGallery');
 });
-Route::get('/slider', 'ImagesController@getImage');
-Route::POST('/store','ImagesController@index');
-Route::GET('/show-slider','ImagesController@getImage');
-Route::GET('/edit-slider','ImagesController@edit_slider');
-Route::GET('/add-slider',function (){
-    return view('back-end.putImage');
-});
-Route::GET('/show-galleries','GalleryController@showGallery');
-Route::GET('/edit-gallery/{id}','GalleryController@editGallery');
-Route::POST('/edit-gallery/','GalleryController@storeUpdate');
-
-Route::POST('/create-gallery','GalleryController@create');
-Route::POST('/show-slider/delete','ImagesController@delete');
-Route::GET('/delete-gallery/{id}', 'GalleryController@delete');
-Route::POST('/ajax-load-image', 'GalleryController@ajaxLoad');
 Route::POST('/contact', 'MailController@store')->name('contact');
 Route::GET('photo-session/{id}','GalleryController@photoSession');
-
-
-
-Route::GET('/test',function (){
-    return view ('test');
-});
-
-    
-
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','ImagesController@getImage');
