@@ -48,5 +48,10 @@ $(document).ready(function () {
             }
         });
 
-    })
+    });
+    $('#summernote').summernote({
+        placeholder: 'Описание фотосессии',
+        tabsize: 2,
+        height: 300
+    });
 });

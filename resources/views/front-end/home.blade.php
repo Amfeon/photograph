@@ -1,4 +1,9 @@
 @extends('front-end.base')
+@section('meta')
+    <title>Качественные фотосессия от Дашанчика в Челябинске</title>
+    <meta name="description" content="Профессиональные фотографии и качественная пост обработка в Челябинске ">
+    <meta name="keyword" content="Фотографии, фотограф, фотосессии, Челябинск, Инстаграмм">
+@endsection
 @section('content')
 <section class="slider">
     <div class="inner_slider">
@@ -20,12 +25,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="contact__title">Забацай себе фотосессию</h2>
-                <div class="contact__desc"><p>Доброго дня, дорогой гость Дашанчика!</p><p>
-                        Коль уж тебя сюда занесло, стало быть, есть интерес к участию в фотосессии, не так ли? Что-ж, мой дорогой друг, ты по адресу!
-                        Я далеко не профессионал, но я стараюсь активно развиваться в этой сфере. Поэтому ты (да-да, милый человечек по ту сторону экрана, речь именно о тебе) мне в этом поможешь.
-                        Я получаю опыт и монетки, а ты получаешь позитивные эмоции и красивые фотографии, хорошая сделка, не правда-ли? Думаю весьма!</p> </div>
-                <div class="botton contact__botton">Заказать фотосессию</div>
+                <h2 class="contact__title">{{$options->title}}</h2>
+                <div class="contact__desc">{!! $options->desc !!}               </div>
+                <a href="#contact" class="botton contact__botton">Заказать фотосессию</a>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@
             </div>
         </div>
             {!! Form::label('text','Осисание фотосесии') !!}
-            {!! Form::textarea('text') !!}
+            {!! Form::textarea('text','',['id'=>'summernote']) !!}
         {!! Form::submit('создать', ['class'=>'btn btn-info']) !!}
         {!! Form::close() !!}
     </div>

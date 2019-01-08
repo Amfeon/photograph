@@ -2392,6 +2392,7 @@ body, html {
 }
 
 .contact__botton {
+  display: block;
   margin: 50px auto;
 }
 
@@ -2581,4 +2582,11 @@ body, html {
 
 .photo-session_title {
   text-align: center;
+}
+
+.error404 {
+  color: black;
+  font-size: 18px;
+  background: url("img/travolta.png") no-repeat top 0 right 0;
+  height: 400px;
 }

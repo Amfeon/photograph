@@ -11383,7 +11383,6 @@ window._ = __webpack_require__(3);
 
 try {
   window.$ = window.jQuery = __webpack_require__(3);
-
   __webpack_require__(13);
 } catch (e) {}
 
@@ -14791,6 +14790,12 @@ $(document).ready(function () {
         $("body").css("overflow-y", "visible");
         $('.portfolio__slider').hide();
         $('.portfolio__slider__image img').remove();
+    });
+    /*-------------- якорь*/
+    $("a[href^='#']").click(function () {
+        var _href = $(this).attr("href");
+        $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+        return false;
     });
 });
 

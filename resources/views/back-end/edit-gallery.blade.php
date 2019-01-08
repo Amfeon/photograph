@@ -19,12 +19,10 @@
             {!! Form::text('title', $data['title'],['class'=>'form-control form-control-lg','placeholder'=> 'Название фотосессии']) !!}
         </div>
             {!! Form::label('text','Осисание фотосесии') !!}
-            {!! Form::textarea('text', $data['text']) !!}
+            {!! Form::textarea('text', $data['text'],['id'=>'summernote']) !!}
             {!! Form::hidden('id', $data['id']) !!}
             {!! Form::hidden('thumnail', $data['thumnail'], ['id'=>'thumnail']) !!}
             {!! Form::submit('обновить', ['class'=>'btn btn-success']) !!}
-
-
         {!! Form::close() !!}
    </div>
 

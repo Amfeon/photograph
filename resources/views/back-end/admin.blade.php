@@ -14,7 +14,10 @@
             </div>
         </div>
         <div class="col-lg-4">
-            <div class="item"></div>
+            <div class="item text-center">
+              <h3 class="item__title ">Заявки</h3>
+              <a href="/show-applications" class="btn btn-success">Показать заявки</a>
+            </div>
         </div>
     </div>
 @endsection
