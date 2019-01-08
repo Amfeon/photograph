@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="contact__title">{{$options->title}}</h2>
-                <div class="contact__desc">{!! $options->desc !!}               </div>
+                <div class="contact__desc">{!! $options->text !!}               </div>
                 <a href="#contact" class="botton contact__botton">Заказать фотосессию</a>
             </div>
         </div>

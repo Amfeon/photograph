@@ -30,6 +30,7 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::POST('/show-slider/delete','ImagesController@delete');
     Route::GET('/delete-gallery/{id}', 'GalleryController@delete')->where('id','[0-9]+');
     Route::POST('/ajax-load-image', 'GalleryController@ajaxLoad');
+    Route::POST('/options-update', 'HomeController@optionsUpdate');
     Route::get('/slider', 'ImagesController@getImage');
     Route::GET('/show-galleries','GalleryController@showGallery');
     Route::GET('/show-applications','MailController@getMails');

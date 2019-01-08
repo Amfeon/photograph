@@ -20,4 +20,16 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        {!! Form::open(['action'=>'HomeController@optionsUpdate', 'class'=>'bottoms_block']) !!}
+        <div class="form-group">
+            {!! Form::label('text','Заголовок') !!}
+            {!! Form::text('title', $data->title,['class'=>'form-control form-control-lg','placeholder'=> 'Название фотосессии']) !!}
+        </div>
+        {!! Form::label('text','Осисание фотосесии') !!}
+        {!! Form::textarea('text', $data->text,['id'=>'summernote']) !!}
+        {!! Form::hidden('id',$data->id) !!}
+        {!! Form::submit('обновить', ['class'=>'btn btn-success']) !!}
+        {!! Form::close() !!}
+    </div>
 @endsection

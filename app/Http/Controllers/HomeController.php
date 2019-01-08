@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use App\options;
 class HomeController extends Controller
 {
     /**
@@ -26,6 +26,13 @@ class HomeController extends Controller
         return view('home');
     }
     public function homeAdmin(){
-        return view('back-end.admin');
+        $options=DB::table('options')->find(1);
+        return view('back-end.admin',['data'=>$options]);
+    }
+    public function optionsUpdate(Request $request){
+        $a=new options();
+        $a->optionsUpdate($request);
+        return redirect('admin');
+        
     }
 }

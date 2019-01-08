@@ -15,7 +15,7 @@ class CreateOptionsTable extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('desc');
+            $table->text('text');
             $table->char('title',100);
             $table->char('vk',255);
             $table->char('insta',255);
