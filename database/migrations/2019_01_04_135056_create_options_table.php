@@ -13,7 +13,7 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->text('text');
             $table->char('title',100);
@@ -30,6 +30,6 @@ class CreateOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('settings');
     }
 }

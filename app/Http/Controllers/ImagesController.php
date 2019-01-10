@@ -33,7 +33,7 @@ class ImagesController extends Controller
     public function getImage(){
        $files = Storage::files('slider');
        $gallery=gallery::all();
-        $options=DB::table('options')->find(1);
+        $options=DB::table('settings')->find(1);
         return view('front-end.home',['data'=>$files,'galleries'=>$gallery,'options'=>$options]);
     }
     public function edit_slider(){

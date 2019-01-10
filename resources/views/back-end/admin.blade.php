@@ -28,7 +28,6 @@
         </div>
         {!! Form::label('text','Осисание фотосесии') !!}
         {!! Form::textarea('text', $data->text,['id'=>'summernote']) !!}
-        {!! Form::hidden('id',$data->id) !!}
         {!! Form::submit('обновить', ['class'=>'btn btn-success']) !!}
         {!! Form::close() !!}
     </div>

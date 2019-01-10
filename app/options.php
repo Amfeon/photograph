@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class options extends Model
 {
-    protected $table = 'options';
+    protected $table = 'settings';
     public $timestamps = false;
 
-    
-    public function optionsUpdate($data){
+    public function optionsUpdate($request){
         $temp=$this->find(1);
-        $temp->title =$data->title;
-        $temp->text = $data->text;
-        $this->save();
+        $temp->title=$request->title;
+        $temp->text= $request->text;
+        $temp->save();
     }
 }
