@@ -15,8 +15,11 @@ class GalleryController extends Controller
         $text=$request->input('text');
         $gal=new gallery();
         $gal_id=$gal->createGallery($gallery,$title, $text);
-        $img= new photoImage();
-        $img->addImages($images,$gal_id);
+        /*/*-*/
+        foreach ($images as $image){
+            $img= new photoImage();
+            $img->addImages($image,$gal_id);
+        }
         return redirect('\show-galleries');
 
     }
