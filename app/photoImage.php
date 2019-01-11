@@ -14,7 +14,7 @@ class photoImage extends Model
         //foreach ($data as $image){
             $path = $data->store('photo');
             $img = Image::make('storage/'.$path)->resize(1280,854);
-            $img->save('storage\photo\\'.$img->basename);
+            $img->save('storage/photo/'.$img->basename);
             //$this->insert(array('sourse'=>$path,'gallery_id'=>$id));
             $this->sourse=$path;
             $this->gallery_id=$id;

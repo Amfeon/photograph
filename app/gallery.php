@@ -17,7 +17,7 @@ class gallery extends Model
             $name= $request->getClientOriginalName();
             $path = $request->storeAs('thumbnail','thumnail_'.$name);
             $image = Image::make('storage/'.$path)->resize(400,265);
-            $image->save('storage\thumbnail\\'.$image->basename);
+            $image->save('storage/thumbnail/'.$image->basename);
         $this->title=$title;
         $this->thumnail=$path;
         $this->text=$text;
@@ -42,7 +42,7 @@ class gallery extends Model
         $name= $request->getClientOriginalName();
         $path = $request->storeAs('thumbnail','thumnail_'.$name);
         $image = Image::make('storage/'.$path)->resize(400,265);
-        $image->save('storage\thumbnail\\'.$image->basename);
+        $image->save('storage/thumbnail/'.$image->basename);
         return $path;
     }
 
