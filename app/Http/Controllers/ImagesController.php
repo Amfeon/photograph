@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\photoImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 // include composer autoload
@@ -14,12 +15,11 @@ class ImagesController extends Controller
 {
     //
     public function index(Request $request){
-
             $data=$request->file('image');
         foreach ($data as $item){
             $path = $item->store('slider');
             $image = Image::make('storage/'.$path)->resize(1200,800);
-            $image->save('storage\slider\\'.$image->basename);
+            $image->save('storage/slider/'.$image->basename);
         }
     }
     public function delete(Request $request){
@@ -39,5 +39,14 @@ class ImagesController extends Controller
     public function edit_slider(){
         $files = Storage::files('slider');
         return view('back-end.show-image',['data'=>$files]);
+    }
+    public function deleteImageGallery(Request $request){
+        $request=$request->except('_token');
+        //foreach ($request as $data){
+        $images=new photoImage();
+        $images->deleteImgGallery($request);
+          return redirect('/admin');
+       // }
+
     }
 }

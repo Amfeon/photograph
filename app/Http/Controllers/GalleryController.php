@@ -39,11 +39,18 @@ class GalleryController extends Controller
     public function editGallery(Request $request){
         $a=new gallery();
         $data=$a->getGallery($request->id);
-        return view('back-end.edit-gallery',['data'=>$data]);
+        $b= new photoImage();
+        $images=$b->getImages($request->id);
+        return view('back-end.edit-gallery',['data'=>$data,'images'=>$images]);
     }
     public function storeUpdate(Request $request){
+        $data=$request->file('image'); // images file
         $gallery= new gallery();
         $gallery->updateGallery($request);
+        foreach ($data as $image){
+            $img= new photoImage();
+            $img->addImages($image,$request->id);
+        }
         return redirect('/show-galleries');
     }
     public function ajaxLoad(Request $request){
@@ -60,6 +67,11 @@ class GalleryController extends Controller
         $gallery=$gal->find($id);
         $img=new photoImage();
         $images= $img->getImages($id);
-        return view('front-end.photoSession',['gallery'=>$gallery, 'images'=>$images]);
+        if(empty($gallery)){
+            return abort(404);
+        }else{
+            return view('front-end.photoSession',['gallery'=>$gallery, 'images'=>$images]);
+        }
+
 }
 }

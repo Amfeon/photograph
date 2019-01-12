@@ -31,6 +31,15 @@ class photoImage extends Model
             $this->destroy($image->id);
         }
     }
+    public function deleteImgGallery($images){
+
+        foreach ($images as $key=>$id) {
+            $key=preg_replace('~_~','.',$key);
+            Storage::delete($key);
+           $this->destroy($id);
+        }
+    }
+    
     public function getImages($id){
         return $this->where('gallery_id',$id)->get();
     }

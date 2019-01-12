@@ -34,6 +34,7 @@ Route::group(['middleware'=> 'auth'],function(){
     Route::get('/slider', 'ImagesController@getImage');
     Route::GET('/show-galleries','GalleryController@showGallery');
     Route::GET('/show-applications','MailController@getMails');
+    Route::POST('/delete-images','ImagesController@deleteImageGallery')->name('delete-images');
 });
 Route::POST('/contact', 'MailController@store')->name('contact');
 Route::GET('photo-session/{id}','GalleryController@photoSession')->where('id','[0-9]+');
