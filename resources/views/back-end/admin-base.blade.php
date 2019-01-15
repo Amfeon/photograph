@@ -30,10 +30,10 @@
                 <a class="nav-link" href="/admin">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/edit-slider">Слайдер</a>
+                <a class="nav-link" href="{{route('slider.edit')}}">Слайдер</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="/show-galleries">Фотосессии</a>
+                <a class="nav-link disabled" href="{{route('gallery.show')}}">Фотосессии</a>
             </li>
         </ul>
     </div>

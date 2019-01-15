@@ -3,10 +3,10 @@
 <div class="row">
         <div class="col-lg-6 d-flex">
             @if(!empty($data))
-                {!! Form::open(['action'=>'ImagesController@delete','class'=>'form']) !!}
+                {!! Form::open(['route'=>'slider.delete','class'=>'form']) !!}
                 <ul class="imageList">
                     @foreach($data as $image)
-                        <li><input   class="checkbox" type="checkbox" name="{{$image}}" value="{{$image}}"><img src="storage\{{ $image }}" ></li>
+                        <li><input   class="checkbox" type="checkbox" name="{{$image}}" value="{{$image}}"><img src="/storage/{{ $image }}" ></li>
                     @endforeach
                 </ul>
                 {!! Form::submit('удалить',['class'=>'btn btn-danger']) !!}
@@ -16,7 +16,7 @@
             @endif
         </div>
         <div class="col-lg-6">
-            {!! Form::open(['action'=>'ImagesController@index', 'files'=>'true','class'=>'bottoms_block']) !!}
+            {!! Form::open(['route'=>'slider.store', 'files'=>'true','class'=>'bottoms_block']) !!}
             {!! Form::labeL('Добавить слайды') !!}
             {!! Form::file('image[]',['class' => 'awesome', 'accept'=>'image/jpeg','multiple'=>'true']) !!}
             {!! Form::submit('Добавить',['class'=>'btn btn-success']) !!}

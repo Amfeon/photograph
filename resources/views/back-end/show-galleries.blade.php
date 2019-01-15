@@ -35,10 +35,10 @@
         <div class="card">
             <div class="card-body text-center"><!-- Начало текстового контента -->
                 <h4 class="card-title">{{$item->title}}</h4>
-                <img src="storage\{{$item->thumnail}}" class="card-img" >
+                <img src="/storage/{{$item->thumnail}}" class="card-img" >
                 <div class="d-flex justify-content-between" style="margin: 20px 0">
-                    <a class="btn btn-warning" href="/edit-gallery/{{$item->id}}" class="card-link">Редактировать</a>
-                    <a  class="btn btn-danger" href="/delete-gallery/{{$item->id}}" class="card-link">Удалить</a>
+                    <a class="btn btn-warning" href="{{route('gallery.edit',['id'=>$item->id])}}" class="card-link">Редактировать</a>
+                    <a class="btn btn-danger" href="{{route('gallery.delete',['id'=>$item->id])}}" class="card-link">Удалить</a>
                 </div>
 
             </div><!-- Конец текстового контента -->

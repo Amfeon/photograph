@@ -20,7 +20,7 @@ class GalleryController extends Controller
             $img= new photoImage();
             $img->addImages($image,$gal_id);
         }
-        return redirect('\show-galleries');
+        return redirect(route('gallety.show'));
 
     }
     public  function showGallery(){
@@ -34,7 +34,7 @@ class GalleryController extends Controller
         $img->deleteImg($id);
         $gal = new gallery();
         $gal->deleteGallery($id);
-        return redirect('/show-galleries');
+        return redirect(route('gallety.show'));
     }
     public function editGallery(Request $request){
         $a=new gallery();
@@ -47,11 +47,13 @@ class GalleryController extends Controller
         $data=$request->file('image'); // images file
         $gallery= new gallery();
         $gallery->updateGallery($request);
-        foreach ($data as $image){
-            $img= new photoImage();
-            $img->addImages($image,$request->id);
+        if (!emptyArray($data)){
+            foreach ($data as $image){
+                $img= new photoImage();
+                $img->addImages($image,$request->id);
+            }
         }
-        return redirect('/show-galleries');
+        return redirect(route('gallety.show'));
     }
     public function ajaxLoad(Request $request){
         $file=$request->file();

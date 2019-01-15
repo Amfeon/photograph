@@ -8,7 +8,7 @@
 <section class="slider">
     <div class="inner_slider">
         @foreach($data as $image)
-            <div class="item active"><img src="storage\{{$image}}" alt="Фотосессия у Дашанчика"> </div>
+            <div class="item active"><img src="storage/{{$image}}" alt="Фотосессия у Дашанчика"> </div>
         @endforeach
     </div>
     <div class="prev">

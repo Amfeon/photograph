@@ -17,26 +17,27 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware'=> 'auth'],function(){
+
     Route::get('/admin', 'HomeController@homeAdmin');
-    Route::POST('/store','ImagesController@index');
-    Route::GET('/show-slider','ImagesController@getImage');
-    Route::GET('/edit-slider','ImagesController@edit_slider');
-    Route::GET('/add-slider',function (){
-        return view('back-end.putImage');
-    });
-    Route::GET('/edit-gallery/{id}','GalleryController@editGallery')->where('id','[0-9]+');
-    Route::POST('/edit-gallery/','GalleryController@storeUpdate');
-    Route::POST('/create-gallery','GalleryController@create');
-    Route::POST('/show-slider/delete','ImagesController@delete');
-    Route::GET('/delete-gallery/{id}', 'GalleryController@delete')->where('id','[0-9]+');
+    Route::GET('/admin/slider/edit','ImagesController@edit_slider')->name('slider.edit');
+    Route::GET('/add-slider',function (){        return view('back-end.putImage');    });
+    Route::POST('/admin/slider/store','ImagesController@index')->name('slider.store');
+    Route::POST('/admin/slider/delete','ImagesController@delete')->name('slider.delete');
+    /*GAllery*/
+    Route::GET('/admin/gallery/edit/{id}','GalleryController@editGallery')->where('id','[0-9]+')->name('gallery.edit');
+    Route::GET('/admin/gallery/show','GalleryController@showGallery')->name('gallery.show');
+    Route::POST('/admin/gallery/store','GalleryController@storeUpdate')->name('gallery.store');
+    Route::POST('/admin/gallery/create','GalleryController@create')->name('gallery.create');
+    Route::GET('/admin/gallery/delete/{id}', 'GalleryController@delete')->where('id','[0-9]+')->name('gallery.delete');
     Route::POST('/ajax-load-image', 'GalleryController@ajaxLoad');
     Route::POST('/options-update', 'HomeController@optionsUpdate');
-    Route::get('/slider', 'ImagesController@getImage');
-    Route::GET('/show-galleries','GalleryController@showGallery');
-    Route::GET('/show-applications','MailController@getMails');
+
+    Route::GET('/admin/show-applications','MailController@getMails')->name('applications.show');
     Route::POST('/delete-images','ImagesController@deleteImageGallery')->name('delete-images');
 });
 Route::POST('/contact', 'MailController@store')->name('contact');
-Route::GET('photo-session/{id}','GalleryController@photoSession')->where('id','[0-9]+');
+Route::GET('/photo-session/{id}','GalleryController@photoSession')->where('id','[0-9]+');
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','ImagesController@getImage');
+
+
